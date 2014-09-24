@@ -138,11 +138,17 @@ body {
 }
 
 .info {
-  -webkit-transition: background 0.3s ease-in-out;
-  -moz-transition: background 0.3s ease-in-out;
-  -ms-transition: background 0.3s ease-in-out;
-  -o-transition: background 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out;
+  -webkit-transition: background 0.3s ease-in-out, all 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out, all 0.3s ease-in-out;
+  -ms-transition: background 0.3s ease-in-out, all 0.3s ease-in-out;
+  -o-transition: background 0.3s ease-in-out, all 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, all 0.3s ease-in-out;
+
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -152,11 +158,10 @@ body {
   user-select: none;
 
   position:absolute;
-  top:1rem;
-  right:1rem;
-  background-color:#333;
-  color:#fff;
-  border-radius:50%;
+  bottom:1rem;
+  right:2rem;
+  border-top:2px solid #333;
+  border-right:2px solid #333;
   width:1.5rem;
   height:1.5rem;
   text-align:center;
@@ -164,8 +169,12 @@ body {
   cursor:pointer;
 }
 
+.modal-open .info {
+  transform:translateY(-11rem) rotate(135deg);
+}
+
 .info:hover {
-  background-color:#555;
+  border-color:#666;
 }
 
 .modal {
