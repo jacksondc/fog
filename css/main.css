@@ -223,6 +223,7 @@ body.modal-open .wrap {
 }
 
 code {
+  font-size:0.8rem;
   border:1px solid #ffef8a;
   padding:2px 4px;
   margin:0 4px;
