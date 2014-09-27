@@ -164,13 +164,7 @@ body {
   border-right:2px solid #333;
   width:1.5rem;
   height:1.5rem;
-  text-align:center;
-  line-height:1.5rem;
   cursor:pointer;
-}
-
-.modal-open .info {
-  transform:translateY(-11rem) rotate(135deg);
 }
 
 .info:hover {
@@ -178,8 +172,6 @@ body {
 }
 
 .modal {
-  transform:translateY(10rem);
-
   text-align:center;
   background-color:#333;
   color:#fff;
@@ -190,16 +182,59 @@ body {
   left:0;
 
   height:10rem;
-  z-index:10;
 }
 
+/* Translation */
+
+.modal-open .info{
+  -webkit-transform:translateY(-11rem) rotate(135deg);
+     -moz-transform:translateY(-11rem) rotate(135deg);
+      -ms-transform:translateY(-11rem) rotate(135deg);
+       -o-transform:translateY(-11rem) rotate(135deg);
+          transform:translateY(-11rem) rotate(135deg);
+}
+
+.modal{
+  -webkit-transform:translateY(10rem);
+     -moz-transform:translateY(10rem);
+      -ms-transform:translateY(10rem);
+       -o-transform:translateY(10rem);
+          transform:translateY(10rem);
+}
+
+body.modal-open .modal{
+  -webkit-transform:translateY(0);
+     -moz-transform:translateY(0);
+      -ms-transform:translateY(0);
+       -o-transform:translateY(0);
+          transform:translateY(0);
+}
+
+.wrap{
+  -webkit-transform:translate(0);
+     -moz-transform:translate(0);
+      -ms-transform:translate(0);
+       -o-transform:translate(0);
+          transform:translate(0);
+}
+
+body.modal-open .wrap{
+  -webkit-transform:translateY(-10rem);
+     -moz-transform:translateY(-10rem);
+      -ms-transform:translateY(-10rem);
+       -o-transform:translateY(-10rem);
+          transform:translateY(-10rem);
+}
+
+body.modal-open .write {
+  opacity:0.5;
+}
 
 .modal, .wrap {
-  -webkit-transition: transform 0.3s ease-in-out;
-  -moz-transition: transform 0.3s ease-in-out;
-  -ms-transition: transform 0.3s ease-in-out;
-  -o-transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+     -moz-transition: -moz-transform 0.3s ease-in-out;
+       -o-transition: -o-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out;
 }
 
 .write {
@@ -208,18 +243,6 @@ body {
   -ms-transition: border-color 0.3s ease-in-out;
   -o-transition: border-color 0.3s ease-in-out;
   transition: border-color 0.3s ease-in-out;
-}
-
-body.modal-open .modal {
-  transform:translateY(0);
-}
-
-.wrap {
-  transform:translate(0);
-}
-
-body.modal-open .wrap {
-  transform:translateY(-10rem);
 }
 
 code {
@@ -273,12 +296,6 @@ a:hover {
   height:100%;
 }
 
-@media only screen and (max-width:800px) {
-    .footer-middle {
-      width:100%;
-    }
-}
-
 .logo {
   background-image:url('../img/logo.png');
   background-size:contain;
@@ -294,6 +311,77 @@ a:hover {
 
 p {
   margin:0.5rem 0;
+}
+
+@media only screen and (max-width:800px) {
+  .footer-middle {
+    width:100%;
+  }
+
+  .footer-content {
+    padding:1rem;
+  }
+}
+
+@media only screen and (max-width:1000px) {
+  .logo {
+    position:absolute;
+    left:50%;
+    top:1.4125rem;
+    margin-left:-3rem;
+  }
+
+  body {
+    padding:5rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .modal {
+    position:absolute;
+    display:block;
+    height:auto;
+
+    top:0;bottom:0;
+    left:0;right:0;
+
+    padding:0 20%;
+  }
+
+  .info {
+    z-index:10;
+  }
+
+  .half {
+    float:left;
+    width:100%;
+  }
+
+  .modal-open .info{
+    -webkit-transform:translateY(-100%) rotate(135deg);
+       -moz-transform:translateY(-100%) rotate(135deg);
+        -ms-transform:translateY(-100%) rotate(135deg);
+         -o-transform:translateY(-100%) rotate(135deg);
+            transform:translateY(-100%) rotate(135deg);
+
+    border-color:#fff;
+  }
+
+  .modal{
+    -webkit-transform:translateY(100%);
+       -moz-transform:translateY(100%);
+        -ms-transform:translateY(100%);
+         -o-transform:translateY(100%);
+            transform:translateY(100%);
+  }
+
+  body.modal-open .wrap{
+    -webkit-transform:translateY(-100%);
+       -moz-transform:translateY(-100%);
+        -ms-transform:translateY(-100%);
+         -o-transform:translateY(-100%);
+            transform:translateY(-100%);
+  }
 }
 
 /* ==========================================================================
