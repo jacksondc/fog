@@ -14,6 +14,9 @@ $(document).ready(function() {
   write.focus();
 
   write.keydown(function(e) {
+    //keydown because we need to get the
+    //event early to prevent shifting focus
+
     if (e.keyCode == 9) {
       var myValue = "\t";
       var startPos = this.selectionStart;
@@ -27,6 +30,9 @@ $(document).ready(function() {
 
       e.preventDefault();
     }
+  }).on('input', function() {
+    //keyup because we need the text to already have been
+    //changed but keypress doesn't get the backspace key
 
     var text = write.val();
 
