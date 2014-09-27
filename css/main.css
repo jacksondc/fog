@@ -165,10 +165,16 @@ body {
   width:1.5rem;
   height:1.5rem;
   cursor:pointer;
+
+  z-index:10;
 }
 
 .info:hover {
   border-color:#666;
+}
+
+.modal-open .info {
+  border-color:#fafafa;
 }
 
 .modal {
@@ -187,11 +193,11 @@ body {
 /* Translation */
 
 .modal-open .info{
-  -webkit-transform:translateY(-11rem) rotate(135deg);
-     -moz-transform:translateY(-11rem) rotate(135deg);
-      -ms-transform:translateY(-11rem) rotate(135deg);
-       -o-transform:translateY(-11rem) rotate(135deg);
-          transform:translateY(-11rem) rotate(135deg);
+  -webkit-transform:translateY(-1rem) rotate(135deg);
+     -moz-transform:translateY(-1rem) rotate(135deg);
+      -ms-transform:translateY(-1rem) rotate(135deg);
+       -o-transform:translateY(-1rem) rotate(135deg);
+          transform:translateY(-1rem) rotate(135deg);
 }
 
 .modal{
@@ -238,11 +244,11 @@ body.modal-open .write {
 }
 
 .write {
-  -webkit-transition: border-color 0.3s ease-in-out;
-  -moz-transition: border-color 0.3s ease-in-out;
-  -ms-transition: border-color 0.3s ease-in-out;
-  -o-transition: border-color 0.3s ease-in-out;
-  transition: border-color 0.3s ease-in-out;
+  -webkit-transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  -ms-transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  -o-transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 code {
@@ -348,10 +354,6 @@ p {
     padding:0 20%;
   }
 
-  .info {
-    z-index:10;
-  }
-
   .half {
     float:left;
     width:100%;
@@ -363,8 +365,6 @@ p {
         -ms-transform:translateY(-100%) rotate(135deg);
          -o-transform:translateY(-100%) rotate(135deg);
             transform:translateY(-100%) rotate(135deg);
-
-    border-color:#fff;
   }
 
   .modal{
