@@ -1,17 +1,42 @@
 var foggy = true;
 var empty = true;
+var hasLocalStorage = localStorageTest();
 
+function localStorageTest(){
+    var test = 'test';
+    try {
+        localStorage.setItem(test, test);
+        localStorage.removeItem(test);
+        return true;
+    } catch(e) {
+        return false;
+    }
+}
+
+$( window ).unload(function() {
+  if(hasLocalStorage) {
+    localStorage.setItem('text',$('.write').val());
+    localStorage.setItem('foggy', foggy);
+  }
+});
 
 $(document).ready(function() {
-
   var write = $('.write');
+
+  write.focus();
+
+  if(hasLocalStorage){
+    write.val(localStorage.getItem('text'));
+    foggy = (localStorage.getItem('foggy') === 'true');
+    if(foggy === false) {
+      write.toggleClass('blur');
+    }
+  }
 
   Mousetrap.bind('mod+h', function(e) {
     write.toggleClass('blur');
     foggy = !foggy;
   });
-
-  write.focus();
 
   write.keydown(function(e) {
     //keydown because we need to get the
