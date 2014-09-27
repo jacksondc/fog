@@ -29,13 +29,17 @@ $(document).ready(function() {
     write.val(localStorage.getItem('text'));
     foggy = (localStorage.getItem('foggy') === 'true');
     if(foggy === false) {
-      write.toggleClass('blur');
+      $('body').toggleClass('blur');
     }
   }
 
   Mousetrap.bind('mod+h', function(e) {
-    write.toggleClass('blur');
+    $('body').toggleClass('blur');
     foggy = !foggy;
+  });
+
+  $('.toggle').click(function() {
+    $('body').toggleClass('blur');
   });
 
   write.keydown(function(e) {

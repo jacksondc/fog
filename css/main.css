@@ -150,13 +150,6 @@ body {
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
   position:absolute;
   bottom:1rem;
   right:2rem;
@@ -164,9 +157,19 @@ body {
   border-right:2px solid #333;
   width:1.5rem;
   height:1.5rem;
-  cursor:pointer;
 
   z-index:10;
+}
+
+.info, .toggle {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  cursor:pointer;
 }
 
 .info:hover {
@@ -175,6 +178,20 @@ body {
 
 .modal-open .info {
   border-color:#fafafa;
+}
+
+.toggle {
+  position:absolute;
+  bottom:1rem;
+  left:2rem;
+  border:1px solid #333;
+  border-radius:2px;
+  padding:0 4px;
+}
+
+body.blur .toggle {
+  background-color:#333;
+  color:#fff;
 }
 
 .modal {
@@ -200,7 +217,7 @@ body {
           transform:translateY(-1rem) rotate(135deg);
 }
 
-.modal{
+.modal {
   -webkit-transform:translateY(10rem);
      -moz-transform:translateY(10rem);
       -ms-transform:translateY(10rem);
@@ -216,7 +233,7 @@ body.modal-open .modal{
           transform:translateY(0);
 }
 
-.wrap{
+.wrap, .toggle {
   -webkit-transform:translate(0);
      -moz-transform:translate(0);
       -ms-transform:translate(0);
@@ -224,7 +241,7 @@ body.modal-open .modal{
           transform:translate(0);
 }
 
-body.modal-open .wrap{
+body.modal-open .wrap, body.modal-open .toggle {
   -webkit-transform:translateY(-10rem);
      -moz-transform:translateY(-10rem);
       -ms-transform:translateY(-10rem);
@@ -236,7 +253,7 @@ body.modal-open .write {
   opacity:0.5;
 }
 
-.modal, .wrap {
+.modal, .wrap, .toggle {
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
      -moz-transition: -moz-transform 0.3s ease-in-out;
        -o-transition: -o-transform 0.3s ease-in-out;
@@ -260,7 +277,7 @@ code {
   color:#ffef8a;
 }
 
-.blur {
+body.blur .write {
   color:rgba(141,141,141,0.5);
   text-shadow: 0 0 8px #666, 0 0 8px #666, 0 0 8px #666;
 }
