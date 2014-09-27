@@ -233,7 +233,7 @@ code {
 
 .blur {
   color:rgba(141,141,141,0.5);
-  text-shadow: 0 0 8px #777, 0 0 8px #777, 0 0 8px #777;
+  text-shadow: 0 0 8px #666, 0 0 8px #666, 0 0 8px #666;
 }
 
 .write {
@@ -263,8 +263,6 @@ a {
 }
 
 a:hover {
-  /*color:#FFF6C0;*/
-  /*color:#FFDF15;*/
   color:#E9CD1B;
 }
 
@@ -287,18 +285,16 @@ a:hover {
   background-position:center center;
   background-repeat:no-repeat;
 
-  width:3rem;
-  height:3rem;
+  width:6rem;
+  height:2.175rem;
   position:absolute;
-  top:1rem;
-  left:1rem;
+  top:2rem;
+  left:2rem;
 }
 
 p {
   margin:0.5rem 0;
 }
-
-
 
 /* ==========================================================================
    Helper classes
