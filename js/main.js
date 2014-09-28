@@ -2,6 +2,8 @@ var foggy = true;
 var empty = true;
 var hasLocalStorage = localStorageTest();
 
+var write;
+
 function localStorageTest(){
     var test = 'test';
     try {
@@ -13,6 +15,18 @@ function localStorageTest(){
     }
 }
 
+function updateTextareaBorder() {
+  var text = write.val();
+
+  if(text && empty) {
+    empty = false;
+    write.removeClass('notext');
+  } else if(!text && !empty) {
+    empty = true;
+    write.addClass('notext');
+  }
+}
+
 $( window ).unload(function() {
   if(hasLocalStorage) {
     localStorage.setItem('text',$('.write').val());
@@ -21,12 +35,16 @@ $( window ).unload(function() {
 });
 
 $(document).ready(function() {
-  var write = $('.write');
+  write = $('.write');
 
   write.focus();
 
   if(hasLocalStorage){
-    write.val(localStorage.getItem('text'));
+    var text = localStorage.getItem('text');
+    if(text) {
+      write.val(text);
+      updateTextareaBorder();
+    }
     foggy = (localStorage.getItem('foggy') === 'true');
     if(foggy === false) {
       $('body').toggleClass('blur');
@@ -59,20 +77,7 @@ $(document).ready(function() {
 
       e.preventDefault();
     }
-  }).on('input', function() {
-    //keyup because we need the text to already have been
-    //changed but keypress doesn't get the backspace key
-
-    var text = write.val();
-
-    if(text && empty) {
-      empty = false;
-      write.removeClass('notext');
-    } else if(!text && !empty) {
-      empty = true;
-      write.addClass('notext');
-    }
-  });
+  }).on('input', updateTextareaBorder);
 
   $('.info').click(function() {
     $('body').toggleClass('modal-open');
