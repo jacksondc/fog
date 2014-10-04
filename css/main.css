@@ -187,10 +187,18 @@ body {
   border:1px solid #333;
   border-radius:2px;
   padding:0 4px;
+
+  width:4rem;
+  text-align:center;
+
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+     -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+       -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+          transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 body.blur .toggle {
-  background-color:#333;
+  background-color:#666;
   color:#fff;
 }
 
@@ -253,7 +261,7 @@ body.modal-open .write {
   opacity:0.5;
 }
 
-.modal, .wrap, .toggle {
+.modal, .wrap {
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
      -moz-transition: -moz-transform 0.3s ease-in-out;
        -o-transition: -o-transform 0.3s ease-in-out;

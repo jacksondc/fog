@@ -27,6 +27,19 @@ function updateTextareaBorder() {
   }
 }
 
+function toggleBlur() {
+  $('body').toggleClass('blur');
+  var toggle = $('.toggle');
+
+  var text = toggle.html();
+  if(text === 'Blur') {
+    toggle.html('Clear');
+  } else {
+    toggle.html('Blur');
+  }
+  foggy = !foggy;
+}
+
 $( window ).unload(function() {
   if(hasLocalStorage) {
     localStorage.setItem('text',$('.write').val());
@@ -45,19 +58,22 @@ $(document).ready(function() {
       write.val(text);
       updateTextareaBorder();
     }
-    foggy = (localStorage.getItem('foggy') === 'true');
-    if(foggy === false) {
-      $('body').toggleClass('blur');
+
+    previouslyFoggy = (localStorage.getItem('foggy') === 'true');
+    if(!previouslyFoggy) {
+      toggleBlur();
     }
   }
 
   Mousetrap.bind('mod+h', function(e) {
-    $('body').toggleClass('blur');
-    foggy = !foggy;
+    e.preventDefault();
+    toggleBlur();
   });
 
-  $('.toggle').click(function() {
-    $('body').toggleClass('blur');
+  var toggle = $('.toggle');
+
+  toggle.click(function() {
+    toggleBlur();
   });
 
   write.keydown(function(e) {
