@@ -191,10 +191,11 @@ body {
   width:4rem;
   text-align:center;
 
-  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-     -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-       -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-          transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  /*background color, color, transform*/
+  -webkit-transition: all 0.3s ease-in-out;
+     -moz-transition: all 0.3s ease-in-out;
+       -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
 }
 
 body.blur .toggle {
