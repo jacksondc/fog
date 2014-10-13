@@ -48,6 +48,13 @@ $( window ).unload(function() {
 });
 
 $(document).ready(function() {
+  //if webkit
+  if(document.body.style.WebkitTextFillColor === "") {
+    $('html').addClass('textfill');
+  } else {
+    $('html').addClass('notextfill');
+  }
+
   write = $('.write');
 
   write.focus();

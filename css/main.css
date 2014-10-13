@@ -291,6 +291,12 @@ body.blur .write {
   text-shadow: 0 0 8px #666, 0 0 8px #666, 0 0 8px #666;
 }
 
+.textfill .blur .write {
+  -webkit-text-fill-color:transparent;
+  color:#333;
+  text-shadow: 0 0 8px #444, 0 0 8px #444, 0 0 8px #444;
+}
+
 .write {
   border:2px solid rgba(200, 200, 200, 0);
 }
