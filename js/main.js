@@ -60,6 +60,13 @@ $(document).ready(function() {
   write.focus();
 
   if(hasLocalStorage){
+    var used = localStorage.getItem('alreadyUsed');
+    if(!used || used === "null") {
+      console.log('used is, again, null');
+      localStorage.setItem('alreadyUsed', true);
+      $('body').toggleClass('modal-open');
+    }
+
     var text = localStorage.getItem('text');
     if(text) {
       write.val(text);
@@ -104,5 +111,9 @@ $(document).ready(function() {
 
   $('.info').click(function() {
     $('body').toggleClass('modal-open');
+  });
+
+  $('.modal-overlay').click(function() {
+    $('body').removeClass('modal-open');
   });
 });

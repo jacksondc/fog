@@ -110,25 +110,28 @@ html, body {
 }
 
 body, textarea {
-  font-family: 'Alegreya', 'Helvetica', sans-serif;
+  font-family: 'Alegreya', 'Proxima Nova', 'Helvetica', sans-serif;
 }
 
 body {
   background-color:#fafafa;
+}
+
+.wrap {
   padding:2rem 4rem;
   max-width:800px;
   margin:0 auto;
+}
+
+.main, .wrap, .write {
+  height:100%;
+  width:100%;
 }
 
 .write {
   border:2px solid transparent;
   border-radius:2px;
   padding:1rem;
-}
-
-.wrap, .write {
-  height:100%;
-  width:100%;
 }
 
 .write {
@@ -214,6 +217,18 @@ body.blur .toggle {
   left:0;
 
   height:10rem;
+}
+
+.modal-overlay {
+  display:none;
+}
+
+.modal-open .modal-overlay {
+  display:block;
+  position:absolute;
+  top:0; left:0; right:0;
+  bottom:10rem;
+  z-index:100;
 }
 
 /* Translation */
