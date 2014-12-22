@@ -366,16 +366,6 @@ p {
   margin:0.5rem 0;
 }
 
-@media only screen and (max-width:800px) {
-  .footer-middle {
-    width:100%;
-  }
-
-  .footer-content {
-    padding:1rem;
-  }
-}
-
 @media only screen and (max-width:1000px) {
   .logo {
     position:absolute;
@@ -387,9 +377,21 @@ p {
   body {
     padding:5rem 2rem;
   }
+
+  .wrap {
+    padding:0 5%;
+  }
 }
 
 @media only screen and (max-width: 800px) {
+  .footer-middle {
+    width:100%;
+  }
+
+  .footer-content {
+    padding:1rem;
+  }
+
   .modal {
     position:absolute;
     display:block;
