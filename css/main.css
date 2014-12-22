@@ -399,13 +399,26 @@ p {
 
     top:0;bottom:0;
     left:0;right:0;
+  }
 
-    padding:0 20%;
+  .modal-open .modal-overlay {
+    /*need both selectors for specificity*/
+    display:none;
   }
 
   .half {
     float:left;
     width:100%;
+    padding:0;
+  }
+
+  .half:nth-child(2) {
+    margin-top:-1rem; /*fake margin collapse*/
+  }
+
+  .modal p {
+    margin:1rem auto;
+    max-width:400px;
   }
 
   .modal-open .info{
