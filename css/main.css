@@ -106,7 +106,6 @@ html {
 
 html, body {
   height:100%;
-  overflow:hidden;
 }
 
 body, textarea {
@@ -115,7 +114,6 @@ body, textarea {
 
 body {
   background-color:#fafafa;
-  overflow:hidden;
 }
 
 .wrap {
@@ -250,7 +248,7 @@ body.blur .toggle {
           transform:translateY(10rem);
 }
 
-body.modal-open .modal{
+.modal-open .modal{
   -webkit-transform:translateY(0);
      -moz-transform:translateY(0);
       -ms-transform:translateY(0);

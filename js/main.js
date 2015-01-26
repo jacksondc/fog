@@ -55,6 +55,8 @@ $(document).ready(function() {
     $('html').addClass('notextfill');
   }
 
+  $('.modal').hide();
+
   write = $('.write');
 
   write.focus();
@@ -110,10 +112,22 @@ $(document).ready(function() {
   }).on('input', updateTextareaBorder);
 
   $('.info').click(function() {
-    $('body').toggleClass('modal-open');
+    if($('.modal').css('display') === 'none') {
+      $('.modal').show();
+      $('.modal').css('display');
+      $('body').addClass('modal-open');
+    } else {
+      $('body').removeClass('modal-open');
+      setTimeout(function() {
+        $('.modal').hide();
+      }, 300); //wait for animation
+    }
   });
 
   $('.modal-overlay').click(function() {
     $('body').removeClass('modal-open');
+    setTimeout(function() {
+      $('.modal').hide();
+    }, 300);
   });
 });
