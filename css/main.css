@@ -115,6 +115,7 @@ body, textarea {
 
 body {
   background-color:#fafafa;
+  overflow:hidden;
 }
 
 .wrap {
