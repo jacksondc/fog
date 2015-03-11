@@ -4,7 +4,7 @@ var hasLocalStorage = localStorageTest();
 
 var write;
 
-function localStorageTest(){
+function localStorageTest() {
     var test = 'test';
     try {
         localStorage.setItem(test, test);
@@ -32,10 +32,10 @@ function toggleBlur() {
   var toggle = $('.toggle');
 
   var text = toggle.html();
-  if(text === 'Blur') {
-    toggle.html('Clear');
+  if(text === 'Sharp') {
+    toggle.html('Blurry');
   } else {
-    toggle.html('Blur');
+    toggle.html('Sharp');
   }
   foggy = !foggy;
 }
@@ -64,7 +64,6 @@ $(document).ready(function() {
   if(hasLocalStorage){
     var used = localStorage.getItem('alreadyUsed');
     if(!used || used === "null") {
-      console.log('used is, again, null');
       localStorage.setItem('alreadyUsed', true);
       $('body').toggleClass('modal-open');
     }
