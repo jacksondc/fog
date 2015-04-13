@@ -112,8 +112,23 @@ $(document).ready(function() {
     }
   }).on('input', updateTextareaBorder);
 
+  var isToggledRecently = false;
+  var backlog = 0;
   $('.info').click(function() {
-    toggleModal();
+    //don't toggle too frequently
+    if(!isToggledRecently) {
+      toggleModal();
+      isToggledRecently = true;
+      setTimeout(function() {
+        isToggledRecently = false;
+        if(backlog % 2 !== 0) {
+          toggleModal();
+        }
+        backlog = 0;
+      }, 300)
+    } else {
+      backlog++;
+    }
   });
 
   $('.modal-overlay').click(function() {
@@ -131,7 +146,7 @@ function toggleModal() {
 
 function showModal() {
   $('.modal').show();
-  $('.modal').css('display', 'block'); //forces browser to draw it below the screen
+  $('.modal').css('display'); //forces browser to draw it below the screen
   $('body').addClass('modal-open');
 }
 
