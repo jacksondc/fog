@@ -73,7 +73,7 @@ $(document).ready(function() {
     }
 
     previousFoggySetting = localStorage.getItem('foggy');
-    previouslyFoggy = previousFoggySetting === 'false' || previousFoggySetting === 'null';
+    previouslyFoggy = previousFoggySetting === 'true' || previousFoggySetting === 'null';
     if(!previouslyFoggy) {
       toggleBlur();
     }
