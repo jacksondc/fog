@@ -79,7 +79,7 @@ $(document).ready(function() {
     }
   }
 
-  Mousetrap.bind('mod+h', function(e) {
+  Mousetrap.bind('mod+b', function(e) {
     e.preventDefault();
     toggleBlur();
   });
