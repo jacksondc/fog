@@ -48,6 +48,9 @@ $( window ).unload(function() {
 });
 
 $(document).ready(function() {
+  //start with modal closed by default
+  hideModal(true); //true for instant - don't wait for animation!
+
   //if webkit
   if(document.body.style.WebkitTextFillColor === "") {
     $('html').addClass('textfill');
@@ -63,7 +66,7 @@ $(document).ready(function() {
     var used = localStorage.getItem('alreadyUsed');
     if(!used || used === "null") {
       localStorage.setItem('alreadyUsed', true);
-      $('body').toggleClass('modal-open');
+      showModal();
     }
 
     var text = localStorage.getItem('text');
@@ -110,10 +113,36 @@ $(document).ready(function() {
   }).on('input', updateTextareaBorder);
 
   $('.info').click(function() {
-    $('body').toggleClass('modal-open');
+    toggleModal();
   });
 
   $('.modal-overlay').click(function() {
-    $('body').removeClass('modal-open');
+    hideModal();
   });
 });
+
+function toggleModal() {
+  if($('body').hasClass('modal-open')) {
+    hideModal();
+  } else {
+    showModal();
+  }
+}
+
+function showModal() {
+  $('.modal').show();
+  $('.modal').css('display', 'block'); //forces browser to draw it below the screen
+  $('body').addClass('modal-open');
+}
+
+function hideModal(instant) { //instant defaults to false
+
+  $('body').removeClass('modal-open');
+
+  if(!instant) { //we need to do it instantly on page load
+    setTimeout(function() {
+      $('.modal').hide();
+    }, 300); //wait for animation
+  }
+
+}
