@@ -140,6 +140,16 @@ body {
 }
 
 .info {
+  padding:1rem;
+
+  position:absolute;
+  bottom:0.5rem;
+  right:1rem;
+
+  z-index:10;
+}
+
+.info-button {
   -webkit-transition: background 0.3s ease-in-out, all 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out, all 0.3s ease-in-out;
   -ms-transition: background 0.3s ease-in-out, all 0.3s ease-in-out;
@@ -152,15 +162,10 @@ body {
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
 
-  position:absolute;
-  bottom:1.5rem;
-  right:2rem;
   border-top:2px solid #333;
   border-right:2px solid #333;
   width:1.5rem;
   height:1.5rem;
-
-  z-index:10;
 }
 
 .info, .toggle {
@@ -174,11 +179,11 @@ body {
   cursor:pointer;
 }
 
-.info:hover {
+.info-button:hover {
   border-color:#666;
 }
 
-.modal-open .info {
+.modal-open .info-button {
   border-color:#fafafa;
 }
 
@@ -232,7 +237,7 @@ body.blur .toggle {
 
 /* Translation */
 
-.modal-open .info{
+.modal-open .info-button {
   -webkit-transform:translateY(-1rem) rotate(135deg);
      -moz-transform:translateY(-1rem) rotate(135deg);
       -ms-transform:translateY(-1rem) rotate(135deg);
@@ -420,7 +425,7 @@ p {
     max-width:400px;
   }
 
-  .modal-open .info{
+  .modal-open .info-button {
     -webkit-transform:translateY(-100%) rotate(135deg);
        -moz-transform:translateY(-100%) rotate(135deg);
         -ms-transform:translateY(-100%) rotate(135deg);
