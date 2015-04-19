@@ -158,6 +158,8 @@ function hideModal(instant) { //instant defaults to false
     setTimeout(function() {
       $('.modal').hide();
     }, 300); //wait for animation
+  } else {
+      $('.modal').hide();
   }
 
 }
