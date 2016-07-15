@@ -1,0 +1,57 @@
+.write {
+  border:none;
+  padding:2rem;
+  max-width:700px;
+}
+
+.wrap, .write {
+  height:auto;
+}
+
+.main {
+  position:relative;
+}
+
+.wrap {
+  height:auto;
+  position:absolute;
+  bottom:3rem;
+  top:0;  left:0; right:0;
+}
+
+@media only screen and (max-width: 732px) {
+  /*.wrap {
+    position: absolute;
+    overflow: hidden;
+    left: 0; right: 0; top: 0;
+    overflow-y: scroll;
+  }*/
+
+
+  /*.wrap::after {
+    content:'';
+    background-color:red;
+    display:block;
+    position:fixed;
+    bottom:0;
+    left:0; right:0;
+    height:3rem;
+  }*/
+
+  .toggle-group {
+    z-index:10;
+  }
+}
+
+.toggle-group {
+  bottom:1rem;
+  left:1rem;
+}
+
+.wrap {
+  text-align:center;
+}
+
+.logo {
+  display:none;
+}

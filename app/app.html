@@ -6,16 +6,36 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Fog - A text editor for public places</title>
+        <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <link href='http://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
 
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/app.css">
+        <script>
+          var link = document.createElement( "link" );
+          link.type = "text/css";
+          link.rel = "stylesheet";
+
+          var script = document.createElement('script');
+
+          if(typeof require !== 'undefined' && typeof require.resolve !== 'undefined' && require.resolve('electron')) {
+            //electron environment
+            link.href='css/desktop.css';
+            script.src = 'js/desktop.js';
+          } else {
+            //web environment
+            link.href='css/web.css';
+            script.src = 'js/web.js';
+          }
+
+          document.head.appendChild(link);
+          document.head.appendChild(script);
+        </script>
+
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body class="blur">
@@ -25,35 +45,18 @@
 
         <!-- Add your site or application content here -->
         <div class="main">
-          <a href="javascript:window.location.href=window.location.href" class="logo"></a>
-          <div class="info"><div class="info-button"></div></div>
-          <div class="toggle">Blurry</div>
-          <div class="wrap"><textarea class="write mousetrap blur notext"></textarea></div>
-        </div>
+          <a href="http://jacksondc.com/fog" class="logo"></a>
 
-        <div class="modal-overlay">
-        </div>
-
-        <div class="modal">
-          <div class="footer-middle">
-            <div class="footer-content">
-              <div class="half">
-                <p>Fog is a text editor for public places.
-                It blurs what you type so that it's difficult to read.</p>
-                <p>Fog works best in Chrome and Safari, thanks to <code>-webkit-text-fill</code> support.</p>
-              </div>
-              <div class="half">
-                <p>Use <code>ctrl+b</code> or <code>cmd+b</code> to toggle the blur.</p>
-                <p>Developed by <a href="http://jacksondc.com">jacksondc</a>. Open source on <a href="https://github.com/jacksondc/fog">GitHub</a>.</p>
-              </div>
-            </div>
+          <div class="toggle-group">
+            <button class="toggle-button" data-shortcut="ctrl+b">Unblur</button>
           </div>
+          <div class="wrap"><textarea class="write mousetrap blur notext"></textarea></div>
         </div>
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/mousetrap.min.js"></script>
+        <script src="js/vendor/mousetrap.min.js"></script>
+
         <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

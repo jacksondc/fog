@@ -1,0 +1,9 @@
+{
+  "name": "fog-desktop",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "electron-document-manager": "^0.1.0",
+    "typewrite": "^1.0.0"
+  }
+}

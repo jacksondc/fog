@@ -1,0 +1,36 @@
+.write {
+  border:2px solid transparent;
+  border-radius:2px;
+  padding:1rem;
+}
+
+.write {
+  border:2px solid rgba(200, 200, 200, 0);
+}
+
+.notext {
+  border:2px solid rgba(200, 200, 200, 1);
+}
+
+.wrap {
+  padding:2rem 4rem;
+  max-width:800px;
+  margin:0 auto;
+}
+
+@media only screen and (max-width:1000px) {
+  .logo {
+    position:absolute;
+    left:50%;
+    top:1.4125rem;
+    margin-left:-3rem;
+  }
+
+  body {
+    padding:5rem 2rem;
+  }
+
+  .wrap {
+    padding:0 5%;
+  }
+}

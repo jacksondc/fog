@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+html {
+  font-size:1.25rem; /*20px*/
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html, body {
+  height:100%;
+}
+
+body, textarea {
+  font-family: 'Alegreya', 'Proxima Nova', 'Helvetica', sans-serif;
+}
+
+body {
+  background-color:#fafafa;
+}
+
+.main, .wrap, .write {
+  height:100%;
+  width:100%;
+}
+
+.write {
+  outline:0;
+  resize:none;
+  background-color:transparent;
+}
+
+.toggle-button {
+  background:transparent;
+  font-family:inherit;
+  outline:0;
+
+  border:1px solid #333;
+  border-radius:2px;
+  padding:0 4px;
+
+  width:4rem;
+  text-align:center;
+
+  /*background color, color, transform*/
+  -webkit-transition: all 0.3s ease-in-out;
+     -moz-transition: all 0.3s ease-in-out;
+       -o-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+
+
+.toggle-group {
+  position:fixed;
+  bottom:2rem;
+  left:2rem;
+}
+
+.toggle-button {
+  position:relative;
+}
+
+.toggle-button::before, .toggle-button::after {
+  /* verified on caniuse jan 30. 2016 */
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+
+  opacity:0;
+}
+
+.toggle-button:hover::before, .toggle-button:hover::after {
+  opacity:1;
+}
+
+.toggle-button::before {
+  content:' ';
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid #666 10px;
+  position:absolute;
+  left:50%;
+  margin-left: -10px;
+  bottom:110%;
+}
+
+.toggle-button::after {
+  font-size:0.8rem;
+  position:absolute;
+  padding:2px 0;
+  left:0;
+  right:0;
+  background:#666;
+  border-radius:8px;
+  color:#fff;
+  bottom:147%; /*necessary for no overlap when transitioning*/
+  content:attr(data-shortcut);
+
+  /*display:block;
+  margin-top:0.2rem;
+  font-size:0.7rem;
+  text-align:center;
+  color:#666;*/
+}
+
+body.blur .toggle-button {
+  background-color:#666;
+  color:#fff;
+}
+
+.write {
+  /* verified on caniuse jan 30, 2016 */
+  -webkit-transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+code {
+  font-size:0.8rem;
+  border:1px solid #ffef8a;
+  padding:2px 4px;
+  margin:0 4px;
+  border-radius:4px;
+  color:#ffef8a;
+}
+
+body.blur .write {
+  color:rgba(141,141,141,0.5);
+  text-shadow: 0 0 8px #666, 0 0 8px #666, 0 0 8px #666;
+}
+
+.textfill .blur .write {
+  -webkit-text-fill-color:transparent;
+  color:#333;
+  text-shadow: 0 0 8px #444, 0 0 8px #444, 0 0 8px #444;
+}
+
+a {
+  color:#ffef8a;
+  text-decoration:none;
+}
+
+a:hover {
+  color:#E9CD1B;
+}
+
+.logo {
+  background-image:url('../img/logo.png');
+  background-size:contain;
+  background-position:center center;
+  background-repeat:no-repeat;
+
+  width:6rem;
+  height:2.175rem;
+  position:absolute;
+  top:2rem;
+  left:2rem;
+}
+
+p {
+  margin:0.5rem 0;
+}
