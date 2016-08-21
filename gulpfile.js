@@ -213,13 +213,13 @@ gulp.task('serve', function() {
 
 /* DEPLOY */
 
-// var deploy = require("gulp-gh-pages");
-// var options = {
-//     remoteUrl: "https://github.com/jacksondc/fog.git",
-//     branch: "master"
-// };
-//
-// gulp.task('deploy', function () {
-//     gulp.src(["public/**/*.*", "public/CNAME"]) //a hack - see https://github.com/rowoot/gulp-gh-pages/issues/26
-//         .pipe(deploy(options));
-// });
+var deploy = require("gulp-gh-pages");
+var options = {
+    remoteUrl: "https://github.com/jacksondc/fog.git",
+    branch: "gh-pages"
+};
+
+gulp.task('deploy', function () {
+    gulp.src(["dist/**/*.*"]) // if CNAME needed, use hack: https://github.com/rowoot/gulp-gh-pages/issues/26
+        .pipe(deploy(options));
+});

@@ -20,6 +20,7 @@
     "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^2.0.11",
     "gulp-concat": "^2.6.0",
+    "gulp-gh-pages": "^0.5.4",
     "gulp-html-prettify": "0.0.1",
     "gulp-imagemin": "^3.0.1",
     "gulp-jade": "^1.1.0",
