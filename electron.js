@@ -4,7 +4,7 @@ var Menu = electron.Menu;
 var MenuItem = electron.MenuItem;
 
 DocumentManager({
-  entryPoint: 'file://' + __dirname + '/dist/app.html',
+  entryPoint: 'file://' + __dirname + '/dist/app/index.html',
   menuReady: function() {
     // Get template for default menu
     var menu = Menu.getApplicationMenu();
