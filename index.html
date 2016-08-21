@@ -2,68 +2,64 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Fog - A text editor for public places</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Fog</title>
+  <meta name="description" content="A text editor for public places">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href='http://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    </head>
-    <body class="blur">
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+  <link href='http://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
 
-        <!-- Add your site or application content here -->
-        <div class="main">
-          <a href="javascript:window.location.href=window.location.href" class="logo"></a>
-          <div class="info"><div class="info-button"></div></div>
-          <div class="toggle">Blurry</div>
-          <div class="wrap"><textarea class="write mousetrap blur notext"></textarea></div>
-        </div>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
 
-        <div class="modal-overlay">
-        </div>
+</head>
 
-        <div class="modal">
-          <div class="footer-middle">
-            <div class="footer-content">
-              <div class="half">
-                <p>Fog is a text editor for public places.
-                It blurs what you type so that it's difficult to read.</p>
-                <p>Fog works best in Chrome and Safari, thanks to <code>-webkit-text-fill</code> support.</p>
-              </div>
-              <div class="half">
-                <p>Use <code>ctrl+b</code> or <code>cmd+b</code> to toggle the blur.</p>
-                <p>Developed by <a href="http://jacksondc.com">jacksondc</a>. Open source on <a href="https://github.com/jacksondc/fog">GitHub</a>.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+<body class="flex-center">
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/mousetrap.min.js"></script>
-        <script src="js/main.js"></script>
+  <div class="index-main">
+    <!-- center -->
+    <div class="title image-replace">
+      <h1>Fog</h1>
+      <img class="logo" src="img/logo.png">
+    </div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-38556084-5');ga('send','pageview');
-        </script>
-    </body>
+    <p>
+      <!--Fog is a text editor for public places. It blurs what you type to make it difficult to read over your shoulder.
+            It works best in either the desktop app or Chrome or Safari, because it uses a secret trick
+            <sup>1</sup> that only works in those browsers.-->
+
+      Fog is a text ed&shy;i&shy;tor for pub&shy;lic places. It blurs what you type to make it dif&shy;fi&shy;cult to read over your shoul&shy;der. It works best in either the desktop app, Chrome, or Sa&shy;fari, be&shy;cause it uses a se&shy;cret trick<sup>1</sup> only
+      those brows&shy;ers support.
+    </p>
+
+    <div class="index-buttons">
+      <a class="index-button" href="app.html">Web</button><a class="index-button" href="download.html">Desktop</a>
+    </div>
+    <p>Developed by <a href="http://jacksondc.com">jacksondc</a>. Open source on <a href="https://github.com/jacksondc/fog">GitHub</a>.</p>
+
+    <p class="footnotes">
+      1. <code>-webkit-text-fill-color</code>, for you nerdy types.
+    </p>
+
+  </div>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+          function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+          e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+          e.src='//www.google-analytics.com/analytics.js';
+          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+          ga('create','UA-38556084-5');ga('send','pageview');
+  </script>
+</body>
+
 </html>
