@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Fog</title>
+        <meta name="description" content="A text editor for public places">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+
+        <script>
+          // do stylesheets/fonts
+
+          if(window.process && window.process.versions.electron) {
+            // electron environment
+
+            var script = document.createElement('script');
+            script.setAttribute('src','js/desktop.js');
+
+            var link = document.createElement('link');
+            link.type = 'text/css'
+            link.rel = 'stylesheet'
+            link.href = 'fonts/fonts.css';
+
+            document.documentElement.className += " desktop";
+
+            document.addEventListener("DOMContentLoaded", function() {
+              document.body.appendChild(script);
+              document.head.appendChild(link);
+            });
+          } else {
+            // web environment
+            // (no web script - it's part of main.js)
+            document.title = "Fog";
+            document.documentElement.className += " web";
+
+            WebFont.load({
+              google: {
+                families: ['Alegreya']
+              },
+              // update caret when new font rendered because position will change
+              active: function() {
+                // need a wrapper function so main.js has time to
+                // define window.updateCaret
+                window.updateCaret();
+              }
+            });
+          }
+        </script>
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body class="blur">
+
+        <a href="http://jacksondc.com/fog" class="logo corner-logo"></a>
+
+        <div class="toggle-button-container">
+          <button class="toggle-button">
+            <span class="toggle-button-half focus-button inactive">Focus</span>
+            <span class="toggle-button-half blur-button active">Blur</span>
+          </button>
+          <div class="toggle-button-tooltip">ctrl+b</div>
+        </div>
+
+        <div class="write-wrap">
+          <textarea class="write mousetrap blur notext"></textarea>
+          <div class="caret"></div>
+        </div>
+
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-38556084-5');ga('send','pageview');
+        </script>
+    </body>
+</html>

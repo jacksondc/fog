@@ -1,0 +1,427 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+
+.logo {
+  background-image:url('../img/logo.png');
+  background-size:contain;
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+
+body, textarea {
+  font-family: 'Alegreya'; /*, 'Proxima Nova', 'Helvetica', sans-serif;*/
+  color:#333;
+}
+
+html {
+  font-size:1.25rem; /*20px*/
+}
+
+* {
+  box-sizing:border-box;
+}
+
+/* ==========================================================================
+   App Styles
+   ========================================================================== */
+
+html, body, .write-wrap {
+  height:100%;
+}
+
+body {
+  background-color:#fafafa;
+  margin:0 auto;
+}
+
+.write {
+  height:100%;
+  width:100%;
+
+  line-height:1.35;
+
+  outline:0;
+  border:none;
+  resize:none;
+  background-color:transparent;
+}
+
+.write-wrap {
+  max-width:800px;
+  margin:0 auto;
+}
+
+.write {
+  padding:2rem;
+}
+
+.toggle-button {
+  background:transparent;
+  font-family:inherit;
+  outline:0;
+
+  border:none;
+  background:#666;
+  color:#fff;
+
+  padding:0;
+  text-align:center;
+
+  font-size:0;
+}
+
+.toggle-button-half {
+  font-size:1rem;
+  display:inline-block;
+  width:4rem;
+  border:1px solid transparent;
+
+  /*background color, color, transform*/
+  -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+
+  border:1px solid #666;
+}
+
+.toggle-button-half.active {
+  background:#fafafa;
+  color:hsl(200, 100%, 37%);
+}
+
+.toggle-button:hover .toggle-button-half.active {
+  color:#666;
+}
+
+.toggle-button:hover .toggle-button-half.inactive {
+  color:hsl(200, 100%, 70%);
+}
+
+.toggle-button:active .toggle-button-half.active {
+  /* no changes */
+}
+
+.toggle-button:active .toggle-button-half.inactive {
+  background-color:#888;
+}
+
+.toggle-button-half:first-child {
+  border-top-right-radius:0;
+  border-bottom-right-radius:0;
+}
+.toggle-button-half:last-child {
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+  border-left:0 !important;
+}
+
+.toggle-button-half, .toggle-button-tooltip {
+  padding:5px;
+}
+
+.toggle-button, .toggle-button-half, .toggle-button-tooltip {
+  border-radius:4px;
+}
+
+.toggle-button-container {
+  position:fixed;
+  bottom:2rem;
+  left:2rem;
+}
+
+body.blur .write {
+  color: transparent;
+  text-shadow: 0 0 8px #444, 0 0 8px #444, 0 0 8px #333;
+}
+
+/*body.textfill.blur .write {
+  -webkit-text-fill-color:transparent;
+  color:#333;
+  text-shadow: 0 0 8px #444, 0 0 8px #444, 0 0 8px #444;
+}*/
+
+.corner-logo {
+  width:6rem;
+  height:2.175rem;
+  position:absolute;
+  top:2rem;
+  left:2rem;
+}
+
+.write-wrap {
+  position:relative;
+}
+
+.caret {
+  position:absolute;
+  margin-top:4px; /* manual offset */
+  width:1px;
+  height:1.1rem;
+  z-index:10;
+
+  background-color:#333;
+
+  animation: blink-animation 1s steps(2, start) infinite;
+  -webkit-animation: blink-animation 1s steps(2, start) infinite;
+
+  visibility:hidden;
+}
+
+body.blur .caret {
+  background-color:#666;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* ==========================================================================
+   App Styles for Web
+   ========================================================================== */
+
+.web .write-wrap {
+  padding:1rem;
+}
+
+.web .write {
+  border-radius:2px;
+
+  min-height:100%; /* so the border is big */
+  border:2px solid rgba(200, 200, 200, 0);
+}
+
+.web .notext {
+  border:2px solid rgba(200, 200, 200, 1);
+}
+
+.write {
+  /* verified on caniuse jan 30, 2016 */
+  -webkit-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* ==========================================================================
+   App Styles for Desktop
+   ========================================================================== */
+
+.desktop .write.notext {
+  border:none;
+}
+
+.desktop .write-wrap, .desktop .write-write {
+  height:auto;
+}
+
+/*.desktop .write-wrap {
+  position:absolute;
+  bottom:2rem;
+  top:0;  left:0; right:0;
+}*/
+
+.desktop .logo {
+  display:none;
+}
+
+/*html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}*/
+
+.desktop .toggle-button-container {
+  /*background:#666;
+  left:0; right:0;
+  bottom:0;
+  height:2rem;
+
+  display: flex;
+  align-items: center;
+  padding:4px;*/
+
+  display:none;
+}
+
+.desktop .toggle-button-half {
+  /*border-radius:4px !important;*/
+}
+
+.desktop .toggle-button-tooltip {
+  display:none;
+}
+
+/*@media only screen and (max-width: 800px) {
+  .desktop .write {
+    padding:2rem;
+  }
+}*/
+
+
+/* ==========================================================================
+   Index Styles
+   ========================================================================== */
+
+body.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  color:hsl(52, 100%, 37%);
+  text-decoration:none;
+}
+
+a:hover {
+  color:hsl(52, 100%, 45%);
+}
+
+.index-main {
+  max-width:350px;
+  text-align:justify;
+  hyphens:auto;
+}
+
+.image-replace h1 {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.title {
+  text-align:left;
+  margin-bottom:1rem;
+}
+
+a.index-button {
+  display:inline-block;
+
+  width:49%;
+  text-align:center;
+
+  color: #333;
+  border:1px solid #333;
+
+  padding:2px 4px;
+  border-radius:4px;
+}
+
+a.index-button:first-child {
+  margin-right:1%;
+}
+
+a.index-button:last-child {
+  margin-left:1%;
+}
+
+a.index-button:hover, a.index-button:active, a.index-button:focus {
+  background:#555;
+  border-color:#555;
+  color: white;
+}
+
+code {
+  color:hsl(52, 100%, 37%);
+  white-space: nowrap;
+}
+
+.footnotes {
+  border-top:1px solid #666;
+  padding-top:0.5rem;
+  font-size:0.8rem;
+}
+
+.footnotes code {
+  font-size:0.72rem;
+}
+
+
+/* ==========================================================================
+   App:Tooltip Styles
+   ========================================================================== */
+
+.toggle-button-tooltip {
+  background: #666;
+  bottom: 100%;
+  color: #fff;
+  text-align:center;
+  padding:5px 0;
+  width: 100%;
+  display: block;
+  margin-bottom: 15px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+     -khtml-user-select: none;    /* Konqueror */
+       -moz-user-select: none;      /* Firefox */
+        -ms-user-select: none;       /* Internet Explorer/Edge */
+            user-select: none;
+
+  -webkit-transform: translateY(10px);
+     -moz-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+       -o-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: all .25s ease-out;
+     -moz-transition: all .25s ease-out;
+      -ms-transition: all .25s ease-out;
+       -o-transition: all .25s ease-out;
+          transition: all .25s ease-out;
+  /*-webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+     -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+      -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+       -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+          box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);*/
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.toggle-button-tooltip::before {
+  bottom: -20px;
+  content: " ";
+  display: block;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+/* CSS Triangles - see Trevor's post */
+.toggle-button-tooltip:after {
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid #666 10px;
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 50%;
+  margin-left: -10px;
+  position: absolute;
+  width: 0;
+}
+
+.toggle-button-container:hover .toggle-button-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0px);
+     -moz-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+       -o-transform: translateY(0px);
+          transform: translateY(0px);
+}

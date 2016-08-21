@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Alegreya';
+    font-style: normal;
+    font-weight: 400;
+    src: url(Alegreya_400_normal.eot); /* {{embedded-opentype-gf-url}} */
+    src: local('☺'),
+        url(Alegreya_400_normal.eot?#iefix) format('embedded-opentype'), /* {{embedded-opentype-gf-url}} */
+        url(Alegreya_400_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/alegreya/v7/MYFQxfgoxFvFirdbdLj3M_esZW2xOQ-xsNqO47m55DA.woff */
+        url(Alegreya_400_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/alegreya/v7/jvx_POxM6YeT6dBBhDfmuXYhjbSpvc47ee6xR_80Hnw.ttf */
+        url(Alegreya_400_normal.svg#Alegreya_400_normal) format('svg'); /* http://fonts.gstatic.com/l/font?kit=wkeaMjRCVrYDy6_bxD9exvesZW2xOQ-xsNqO47m55DA&skey=a67f3093e1ad2d69&v=v7#Alegreya */
+}
